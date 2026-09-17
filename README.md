@@ -93,8 +93,6 @@ bac <- merge(bac, gunc[, .(genome, pass.GUNC)],
 
 This procedure retained 84,655 bacterial species representatives distributed across 54 GTDB phyla.
 
-> **Reproducibility note:** the filtering code used in the analysis applies a completeness threshold of `>= 90%` and evaluates phyletic representation at the **order** level. These settings reproduce the reported set of 84,655 genomes. They should not be replaced with `> 95%` completeness or a class-level filter when reproducing this dataset.
-
 ### GUNC screening
 
 Chimeric assemblies were assessed using [GUNC](https://github.com/grp-bork/gunc). The resulting `GUNC_226.tsv` table was joined to the GTDB metadata by genome accession, and only records with `pass.GUNC == TRUE` were retained. A typical GUNC v1.0.6 invocation for predicted proteins is:
