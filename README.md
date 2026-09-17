@@ -53,11 +53,11 @@ Asr_reconciliation/<species_tree>_<gene>_totalSpeciesEventCounts.txt
 
 The three bacterial species chronograms used for reconciliation were obtained from Adrián A. Davín *et al*., *A geological timescale for bacterial evolution and oxygen adaptation*. The reconciliation prefixes identify the alternative molecular-clock chronogram used in each analysis:
 
-| Prefix | Species chronogram |
-|---|---|
-| `ugam` | `Figure3_timetree.tre` |
-| `ln` | `FigureS19c_timetree.tre` |
-| `wn` | `FigureS19d_timetree.tre` |
+| Prefix | Molecular-clock model | Species chronogram |
+|---|---|---|
+| `ugam` | Uncorrelated gamma model | `Figure3_timetree.tre` |
+| `ln` | Autocorrelated log-normal model (not converged) | `FigureS19c_timetree.tre` |
+| `wn` | White-noise model | `FigureS19d_timetree.tre` |
 
 ## 1. Genome collection and quality filtering
 
@@ -247,7 +247,7 @@ The resulting trees are provided in `Asr_phylogenesis/` as `<gene>.treefile`.
 
 ## 6. Gene-tree/species-tree reconciliation
 
-Gene trees were reconciled against three bacterial chronograms with [AleRax v1.4.1](https://github.com/BenoitMorel/AleRax). Reconciliations used 1,000 gene-tree samples, relative-dating constraints on horizontal transfers, and gene-family-specific missing-data fractions.
+Gene trees were reconciled with three previously published bacterial chronograms from Adrián A. Davín *et al*., *A geological timescale for bacterial evolution and oxygen adaptation*. These chronograms were inferred under uncorrelated gamma, autocorrelated log-normal (not converged), and white-noise molecular-clock models. Reconciliation was performed with [AleRax v1.4.1](https://github.com/BenoitMorel/AleRax) using 1,000 gene-tree samples, relative-dating constraints on horizontal transfers, and gene-family-specific missing-data fractions.
 
 The following loop summarizes the commands used for all 11 gene families and all three species trees:
 
@@ -301,7 +301,3 @@ The workflow requires the following principal software packages:
 - IQ-TREE v3.0.1
 - ModelFinder, as implemented in IQ-TREE v3.0.1
 - AleRax v1.4.1
-- GNU Parallel
-
-
-Exact resource paths, thread counts, and scheduler settings should be adjusted for the local computing environment.
